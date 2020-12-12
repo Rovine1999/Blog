@@ -107,7 +107,7 @@ class Opinion(db.Model):
         return f'Posts {self.opinion_title}'
     
 class Comment(db.Model):
-    __tablename__ = 'comments'
+    __tablename__ = 'comment'
 
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.Text())
