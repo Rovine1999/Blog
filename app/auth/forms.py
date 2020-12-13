@@ -1,9 +1,7 @@
-
- 
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField
 from wtforms.validators import Required,Email,EqualTo,ValidationError
-from ..models import User,Writer
+from ..models import User,Blogger
 from wtforms import StringField,PasswordField,BooleanField,SubmitField
 
 
@@ -22,19 +20,19 @@ class RegistrationForm(FlaskForm):
         if User.query.filter_by(username = data_field.data).first():
             raise ValidationError('That username is taken')
         
-class WriterRegistrationForm(FlaskForm):
-    writer_email = StringField('Your Email Address',validators=[Required(),Email()])
+class BloggerRegistrationForm(FlaskForm):
+    blogger_email = StringField('Your Email Address',validators=[Required(),Email()])
     writer_name = StringField('Enter your username',validators = [Required()])
     writer_password = PasswordField('Password',validators = [Required(), EqualTo('password_confirm',message = 'Passwords must match')])
     password_confirm = PasswordField('Confirm Passwords',validators = [Required()])
-    submit = SubmitField('Writer Sign Up')
+    submit = SubmitField('Blogger Sign Up')
 
     def validate_email(self,data_field):
-        if Writer.query.filter_by(writer_email =data_field.data).first():
+        if Blogger.query.filter_by(blogger_email =data_field.data).first():
             raise ValidationError('There is an account with that email')
 
     def validate_username(self,data_field):
-        if Writer.query.filter_by(writer_name = data_field.data).first():
+        if Blogger.query.filter_by(writer_name = data_field.data).first():
             raise ValidationError('That writer name is taken')
 
 class LoginForm(FlaskForm):
@@ -44,7 +42,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
     
 class WriterLoginForm(FlaskForm):
-    writer_email = StringField('Writer Email Address',validators=[Required(),Email()])
-    password = PasswordField('Writer Password',validators =[Required()])
+    blogger_email = StringField('Blogger Email Address',validators=[Required(),Email()])
+    password = PasswordField('Blogger Password',validators =[Required()])
     remember = BooleanField('Remember me')
     submit = SubmitField('Sign In')
