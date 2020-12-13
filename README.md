@@ -1,5 +1,5 @@
 #### BY
-#### Rovine Sydney Wanjala, 8/12/2020
+#### Rovine Sydney Wanjala, 13/12/2020
 ## Description
 Application that allows users to use that one minute wisely to pitch and also allows other users to vote on them and leave comments to give their feedback on them.
 ## Setup/Installation Requirements
@@ -9,7 +9,7 @@ To log onto the application copy and paste the link on the browser: https://rovi
 ## Known Bugs
 So far, on this application no errors discovered, but if there's an error you would discover on installation, feel free to reach out.
 ## Technologies Used
-Technology used in the development of this application is HTML in templates and  python i.e flask for functionallity
+Technology used in the development of this application is HTML in templates and  python i.e flask for functionallity and bootstrap for styling of the web page
 ## Support and contact details
 You can find me:
 1. twiter: @rovinewanjala.
