@@ -1,5 +1,5 @@
-{% extends 'base.html'%}
-{% import 'bootstrap/wtf.html' as wtf%}
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
 {% block styles%}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
@@ -9,7 +9,6 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        
         <div class="col-md-4 pt-3">
             <div class="card" style="position: relative">
                 <div class="card-header">
@@ -25,10 +24,8 @@
         </div>
         <div class="col-md-8">
 
-            {{wtf.quick_form(registration_form)}}
-
+            {{wtf.quick_form(form)}}
         </div>
-        <!-- <div class="col-md-2"></div> -->
     </div>
 </div>
 <br><br><br><br><br>
@@ -41,4 +38,4 @@
     <p class="text-center pt-2">© 2020 Copyright: Rovine Sydney Wanjala</p>
   </footer>
 
-{% endblock%}
+{% endblock %}
