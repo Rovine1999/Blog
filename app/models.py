@@ -39,8 +39,8 @@ class User(UserMixin,db.Model):
     def __repr__(self):
         return f'User {self.username}'
     
-class Writer(UserMixin,db.Model):
-    __tablename__ = 'writers'
+class Blogger(UserMixin,db.Model):
+    __tablename__ = 'bloggers'
 
     id = db.Column(db.Integer,primary_key = True)
     writer_name = db.Column(db.String(255),index = True)

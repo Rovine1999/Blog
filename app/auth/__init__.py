@@ -1,8 +1,8 @@
 from flask import Blueprint
 
-bp = Blueprint('auth',__name__)
+auth = Blueprint('auth',__name__)
 
-from . import views, errors
+from . import views
 
 def create_app(config_name):
     app = Flask(__name__)

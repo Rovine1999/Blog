@@ -22,8 +22,8 @@ class RegistrationForm(FlaskForm):
         
 class BloggerRegistrationForm(FlaskForm):
     blogger_email = StringField('Your Email Address',validators=[Required(),Email()])
-    writer_name = StringField('Enter your username',validators = [Required()])
-    writer_password = PasswordField('Password',validators = [Required(), EqualTo('password_confirm',message = 'Passwords must match')])
+    blogger_name = StringField('Enter your username',validators = [Required()])
+    blogger_password = PasswordField('Password',validators = [Required(), EqualTo('password_confirm',message = 'Passwords must match')])
     password_confirm = PasswordField('Confirm Passwords',validators = [Required()])
     submit = SubmitField('Blogger Sign Up')
 
@@ -32,7 +32,7 @@ class BloggerRegistrationForm(FlaskForm):
             raise ValidationError('There is an account with that email')
 
     def validate_username(self,data_field):
-        if Blogger.query.filter_by(writer_name = data_field.data).first():
+        if Blogger.query.filter_by(blogger_name = data_field.data).first():
             raise ValidationError('That writer name is taken')
 
 class LoginForm(FlaskForm):
@@ -41,7 +41,7 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember me')
     submit = SubmitField('Sign In')
     
-class WriterLoginForm(FlaskForm):
+class BloggerLoginForm(FlaskForm):
     blogger_email = StringField('Blogger Email Address',validators=[Required(),Email()])
     password = PasswordField('Blogger Password',validators =[Required()])
     remember = BooleanField('Remember me')

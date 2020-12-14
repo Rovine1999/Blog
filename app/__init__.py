@@ -23,7 +23,6 @@ def create_app(config_name):
 
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
-    app.config.from_pyfile('config.py')
     
     # Initializing flask extensions
     bootstrap.init_app(app)
@@ -46,4 +45,3 @@ def create_app(config_name):
     configure_uploads(app,photos)
 
     return app
-
