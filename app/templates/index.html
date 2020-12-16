@@ -1,3 +1,4 @@
+
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 {% import 'bootstrap/wtf.html' as wtf %}
@@ -9,12 +10,14 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 {% block content %}
+{%for quote in getquote%}
 <!-- Content block -->
 
 <h1 style="color: brown;">
-    <center><b>WELCOME BLOG WEBSITE</b></center>
+    <center><p class="text-danger"><b>WANJALA BLOG WEBSITE</b></p></center>
 </h1>
 <br><br>
+
 <div class="container">
     <div class="row">
 
@@ -22,17 +25,28 @@
             <div class="card" style="position: relative">
                 <div class="card-header">
                     <div class="card-title">
-                        <h2>Quote of the day..</h2>
+                    <div class="text-danger"><h2><u>Quote of the day</u></h2></div>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body-">
                     <h2 class="quoted-author">{{ quote.author }}</h2>
                     <p class="quoted-quote">{{ quote.quote }}</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
-            <!-- <h2>This is Joseph Shitandi's blog website where one can create and share their opinions. One can also read and comment on those opinions. Anyone interested can create account, login in, add opinion or leave a comment.</h2> -->
+        <div class="card">
+
+          <div class="card-body">
+        
+            <!-- Title -->
+            <h4 class="card-title"><u>BLOG</u></h4>
+            <!-- Text -->
+            <p class="card-text">This is Wanjala's blog website where one can create and share their opinions.<br/> One can also read and comment on those opinions. Create account, login in, and leave a comment.</p>
+            <!-- Button -->
+            <a href="{{url_for ('main.all')}}" class="btn btn-warning">Button</a>
+           
+          </div>
+        
         </div>
 
     </div>
@@ -44,6 +58,8 @@
       <i class="fa fa-2x fa-twitter"></i>
       <i class="fa fa-2x fa-instagram"></i>
     </div>
-    <p class="text-center pt-2">© 2020 Copyright: Rovine Sydney Wanjala</p>
+    <p class="text-center pt-2 text-color-warning">© 2020 Copyright: Rovine Sydney Wanjala</p>
   </footer>
+{% endfor %}
 {% endblock%}
+

@@ -33,7 +33,7 @@ class BloggerRegistrationForm(FlaskForm):
 
     def validate_username(self,data_field):
         if Blogger.query.filter_by(blogger_name = data_field.data).first():
-            raise ValidationError('That writer name is taken')
+            raise ValidationError('That blogger name is taken')
 
 class LoginForm(FlaskForm):
     email = StringField('Your Email Address',validators=[Required(),Email()])

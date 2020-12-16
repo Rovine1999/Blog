@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/categories.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}">
+
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <br>
+    <hr>
+    <h3 class="text-center"><u>PITCH COMMENTS</u></h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+                <div class="card-columns">
+                    {% for blogs in blogs[::-1] %}
+
+                    <div class="card bg-transparent border-success">
+                        <div class="card-header bg-transparent border-success">
+                            {{blogs.title}}
+                        </div>
+                        <div class="card-body text">
+                            <p>{{blogs.pitch}}</p><br>
+                            <footer class="blockquote-footer bg-transparent border-success">{{blogs.author}}
+                                <br><cite title="Source Title">Publish date:
+                                    {{blogs.date.strftime('%Y-%m-%d %H:%m')}}</cite></footer>
+                        </div>
+                        <div class="card-footer bg-transparent border-success">
+                            <button type="button" class="btn btn-warning btn-sm"><a
+                                    href="/new_comment/{{blogs.id}}">Comment</a></button>
+                            <button type="button" class="btn btn-warning btn-sm"><a
+                                    href="/comments/{{blogs.id}}">View comments</a></button>
+                        </div>
+                        <hr> <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4"></div>
+
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}
+

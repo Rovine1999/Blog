@@ -1,3 +1,3 @@
-Hello {{blogger.blgger_name}}
+Hello {{blogger.blogger_name}}
 Welcome to Wanjala blogger website
 I have just seen you have signed up for my blogs website and want to welcome you to the family. Please enjoy the to read the blogs, add comments and leave your opinions.

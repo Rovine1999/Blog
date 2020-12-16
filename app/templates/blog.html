@@ -1,46 +1,66 @@
-{% extends 'base.html' %}
-{% import "bootstrap/wtf.html" as wtf %}
-{% block styles%}
+
+
+{% extends 'base.html'%}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}"> 
 
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4 pt-3">
-            <div class="card" style="position: relative">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2>Quote of the day..</h2>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h2 class="quoted-author">{{ quote.author }}</h2>
-                    <p class="quoted-quote">{{ quote.quote }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8 pt-3">
-            <div class="banner-post-banner">
-                <div class="container" id="post-banner">
-                    <h2 class="text-center text-white">Add Opinion</h2>
-                    <p class="text-center text-white">Add your Opinion or quote here..</p>
-                </div>
-            </div>
-            {{ wtf.quick_form(form)}}
-        </div>
-    </div>
+  <h2 class="text-center" ><u>WELCOME TO BLOGS</u></h2>
+  <p class="text-center"><i>Here, you have only sixty seconds which can count in your life, its upon you to make it come through.</i></p>
 
-</div>
-<br><br><br><br><br>
-  <footer class="footer mt-4">
-    <div class="social-icons">
-      <i class="fa fa-2x fa-facebook"></i>
-      <i class="fa fa-2x fa-twitter"></i>
-      <i class="fa fa-2x fa-instagram"></i>
+
+<body >
+
+  <div class="container">  
+    <div class="d-flex justify-content-center row">
+      <div class="card-groups">
+        <div class="card card-cascade wider">         
+          <div class="card-body card-body-cascade text-center pb-0">
+            <h5 class="card-title"><u>Economic Blog</u></h5>
+            <h6 class="blue-text pb-2"><strong>Graffiti Artist</strong></h6>
+            <p class="card-text">The efficiency of most workers is beyond the control of the management and depends more than has been supposed upon the willingness of men to do their best.</p></br>
+            <p class="card-text">As a man, unless you go out and toil for yourself and your family or you end up leading the poorest future.</p></br>
+            <div class="card-footer text-muted text-center mt-4">
+              2 days ago
+          </div>
+            <button type="button" class="btn btn-success"><a href="../blog/">Add  New Blog</a></button><br><br>
+            <button type="button" class="btn btn-success"><a href="/blogs/Economic">Read More</a></button>
+          </div>
+        </div>
+
+        <div class="card card-cascade narrower">  
+          <div class="card-body card-body-cascade">
+            <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
+          <div class="card-body">
+            <h4 class="font-weight-bold card-title"><u>Advertising Blog</u></h4>
+            <p class="card-text"> Simplicity is the ultimate sophistication.</p><br>
+            <p class="card-text"> If you want to understand how a lion hunts, don’t go to the zoo. Go to the jungle.</p><br>
+            <div class="card-footer text-muted text-center">
+              2 days ago
+            </div>
+            <button type="button" class="btn btn-success"><a href="../blog/">Add New Blog</a></button><br><br>
+            <button type="button" class="btn btn-success"><a href="./blogs.html/Advertising">Read More</a></button>
+          </div>
+        </div>
+
+        <div class="card card-cascade">          
+          <div class="card-body">
+            <h4 class="card-title"><strong>Work Blog</strong></h4>
+            <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
+            <p class="card-text">The greatest thing in this world is not so much where we stand, as in what direction we are moving.</p></br>
+            <p class="card-text">It's time to start living the life we've imagined.</p></br>
+            <div class="card-footer text-muted text-center">
+              2 days ago
+            </div>
+            <button type="button" class="btn btn-success"><a href="../blogs/">Add New Blog</a></button></br></br>
+            <button type="button" class="btn btn-success"><a href="./blogs.html/Web developer">Read More</a></button>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="text-center pt-2">© 2020 Copyright: Rovine Sydney Wanjala</p>
-  </footer>
-{% endblock %}
+  </div>
+</body>
+  {% endblock%}
+

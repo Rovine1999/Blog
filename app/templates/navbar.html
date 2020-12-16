@@ -1,31 +1,64 @@
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
-    <a class="navbar-brand" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+   <!--Navbar -->
+   <nav class="mb-1 navbar navbar-expand-lg navbar-info success-color">
+    <a class="navbar-brand" class="text-danger">BLOG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-      <ul class="nav navbar-nav navbar-right">
-        {% if current_user.is_authenticated %}
-        <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-        <li><a href="{{url_for('auth.bogger_login')}}">Sign in</a></li>
-        <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-        {% else %}
-        <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
-        {%endif%}
-    </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item avatar">
-          <a class="nav-link p-0" href="#">
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
-              alt="avatar image" height="35">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
           </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.all')}}"><b>My Blogs</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.new_blog')}}"><b>New Blogs</b></a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light">
+            <i class="fab fa-google-plus-g"></i>
+          </a>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default"
+            aria-labelledby="navbarDropdownMenuLink-333">
+            {% if current_user.is_authenticated %}
+            <a class="dropdown-item" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
+            <a class="dropdown-item" href="{{url_for('auth.blogger_register')}}">Sign Up</a>
+            <a class="dropdown-item" href="{{url_for('auth.logout')}}">Sign Out</a>
+            {% else %}
+            <a class="dropdown-item" href="{{url_for('auth.login')}}">Sign In</a>
+            {%endif%}
+          </div>
+          <li class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item avatar">
+              <a class="nav-link p-0" href="#"></a>
+                <img src="../static/photos/IMG_20200228_134703_599.jpg" width="30px" height="30px" class="rounded-circle z-depth-0"
+                  alt="avatar image" height="35">
+              </a>
+            </li>
         </li>
       </ul>
     </div>
   </nav>
-  
-
-
-
- 
+  <!--/.Navbar -->

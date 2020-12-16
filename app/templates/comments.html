@@ -13,8 +13,9 @@
       <div class="card" style="position: relative">
         <div class="card-header">
           <div class="card-title">
-            <h2>Quote of the day..</h2>
+          <div class="text-danger"><h2><u>Quote of the day</u></h2></div>
           </div>
+      </div>
         </div>
         <div class="card-body">
           <h2 class="quoted-author">{{ quote.author }}</h2>
@@ -35,8 +36,7 @@
                   <h4 class="card-title">Commented by:~{{comm.username}}</h4>
                   <p class="card-text">{{comm.comment}}.</p>
                 </div>
-                <div class="card-footer bg-transparent border-success"><small>Publish
-                    date:{{comm.date.strftime('%Y-%m-%d')}}</small></div>
+                <div class="card-footer bg-transparent border-success"><small>Publish on:{{comm.date.strftime('%Y-%m-%d-%H-%m')}}</small></div>
               </div>
             </div>
           </div>
@@ -47,14 +47,5 @@
 </div>
 
 {% endfor %}
-<br><br><br><br><br>
-  <footer class="footer mt-4">
-    <div class="social-icons">
-      <i class="fa fa-2x fa-facebook"></i>
-      <i class="fa fa-2x fa-twitter"></i>
-      <i class="fa fa-2x fa-instagram"></i>
-    </div>
-    <p class="text-center pt-2">© 2020 Copyright: Rovine Sydney Wanjala</p>
-  </footer>
 </body>
 {% endblock %}
