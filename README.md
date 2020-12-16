@@ -11,8 +11,11 @@ $ https://github.com/Rovine1999/Blog.git
 3. Create virtual environment and activate it.
 
 1. $ python3.8 -m venv --without-pip virtual
+
 2. $ source virtual/bin/activate
+
 3. $ curl https://bootstrap.pypa.io/get-pip.py | python
+
 4. $ pip install -r requirements.txt.
 
 To log onto the application copy and paste the link on the browser: https://rovblog.herokuapp.com/
