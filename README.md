@@ -1,7 +1,7 @@
 #### BY
 #### Rovine Sydney Wanjala, 13/12/2020
 ## Description
-Application that allows users to use that one minute wisely to pitch and also allows other users to vote on them and leave comments to give their feedback on them.
+Application where one can create and share blogs and other users can read and comment on them.
 ## Setup Instructions and Installation Requirements
 1. Clone the repository on to your computer:
 $ https://github.com/Rovine1999/Blog.git
