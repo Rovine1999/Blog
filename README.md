@@ -2,10 +2,21 @@
 #### Rovine Sydney Wanjala, 13/12/2020
 ## Description
 Application that allows users to use that one minute wisely to pitch and also allows other users to vote on them and leave comments to give their feedback on them.
-## Setup/Installation Requirements
-To install this application, go to terminal and clone using the link:https://github.com/Rovine1999/Blog.git to run on your machine.
+## Setup Instructions and Installation Requirements
+1. Clone the repository on to your computer:
+$ https://github.com/Rovine1999/Blog.git
+
+2. Navigate to the project directory.
+
+3. Create virtual environment and activate it.
+
+(i). $ python3.8 -m venv --without-pip virtual
+(ii). $ source virtual/bin/activate
+(iii) $ curl https://bootstrap.pypa.io/get-pip.py | python
+(iv). $ pip install -r requirements.txt.
 
 To log onto the application copy and paste the link on the browser: https://rovblog.herokuapp.com/
+
 ## Known Bugs
 So far, on this application no errors discovered, but if there's an error you would discover on installation, feel free to reach out.
 ## Technologies Used
